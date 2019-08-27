@@ -3,6 +3,8 @@ import 'package:flutter_app_fun/bean/fun_item.dart';
 import 'cache/index.dart';
 import 'crypto/index.dart';
 import 'database/index.dart';
+import 'file/index.dart';
+import 'https/index.dart';
 
 class PluginDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -23,6 +25,16 @@ class PluginDemoPage extends StatelessWidget {
           name: "SqliteDemo",
           callback: (it) {
             jumpTo(context,SqliteDemo());
+          }))
+      ..add(FunItem(
+          name: "FileDemo",
+          callback: (it) {
+            jumpTo(context,FileDemo());
+          }))
+      ..add(FunItem(
+          name: "HttpsDemo",
+          callback: (it) {
+            jumpTo(context,HttpsDemo());
           }));
   }
 
