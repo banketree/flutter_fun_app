@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fun/bean/fun_item.dart';
 import 'blocs/index.dart';
+import 'scoped/index.dart';
 
 class StateDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -12,11 +13,11 @@ class StateDemoPage extends StatelessWidget {
           callback: (it) {
             jumpTo(context,BlocsDemo());
           }))
-//      ..add(FunItem(
-//          name: "Elements",
-//          callback: (it) {
-//            jumpTo(context,ElementsDemoPage());
-//          }))
+      ..add(FunItem(
+          name: "ScopedDemo",
+          callback: (it) {
+            jumpTo(context,ScopedDemo());
+          }))
 //      ..add(FunItem(
 //          name: "Themes",
 //          callback: (it) {
