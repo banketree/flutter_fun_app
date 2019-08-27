@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fun/bean/fun_item.dart';
 import 'cache/index.dart';
+import 'crypto/index.dart';
 
 class PluginDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -11,6 +12,11 @@ class PluginDemoPage extends StatelessWidget {
           name: "Cache",
           callback: (it) {
             jumpTo(context,CacheDemo());
+          }))
+      ..add(FunItem(
+          name: "CryptoDemo",
+          callback: (it) {
+            jumpTo(context,CryptoDemo());
           }));
   }
 
@@ -27,7 +33,7 @@ class PluginDemoPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bar Demo"),
+        title: Text("Plugin Demo"),
       ),
       body: Container(
         child: ListView.builder(

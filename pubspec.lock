@@ -29,6 +29,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.14.11"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.1"
+  crypto:
+    dependency: "direct dev"
+    description:
+      name: crypto
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.1.2"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -61,7 +75,7 @@ packages:
     source: sdk
     version: "0.0.0"
   http:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: http
       url: "https://pub.flutter-io.cn"
@@ -109,6 +123,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.6.2"
+  path_provider:
+    dependency: "direct dev"
+    description:
+      name: path_provider
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.4.1"
   pedantic:
     dependency: transitive
     description:
@@ -205,6 +226,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.2.5"
+  transparent_image:
+    dependency: "direct dev"
+    description:
+      name: transparent_image
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.0"
   typed_data:
     dependency: transitive
     description:
