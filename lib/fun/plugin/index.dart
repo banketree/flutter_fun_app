@@ -6,6 +6,7 @@ import 'database/index.dart';
 import 'file/index.dart';
 import 'https/index.dart';
 import 'img/index.dart';
+import 'list/index.dart';
 
 class PluginDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -41,6 +42,11 @@ class PluginDemoPage extends StatelessWidget {
           name: "SelectImage",
           callback: (it) {
             jumpTo(context,SelectImage());
+          }))
+      ..add(FunItem(
+          name: "ListDemo",
+          callback: (it) {
+            jumpTo(context,ListDemo());
           }));
   }
 
