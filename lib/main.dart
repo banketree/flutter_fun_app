@@ -2,8 +2,31 @@ import 'package:flutter/material.dart';
 import 'bean/fun_item.dart';
 import 'fun/layout/index.dart';
 import 'fun/state/index.dart';
+import 'dart:io';
 
-void main() => runApp(MyApp());
+
+
+Future main() async {
+  var dir = new Directory('/tmp');
+
+  try {
+    var dirList = dir.list();
+    await for (FileSystemEntity f in dirList) {
+      if (f is File) {
+        print('Found file ${f.path}');
+      } else if (f is Directory) {
+        print('Found dir ${f.path}');
+      }
+    }
+
+    runApp(MyApp());
+  } catch (e) {
+    print(e.toString());
+  }
+}
+
+
+//void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
