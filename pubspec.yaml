@@ -58,6 +58,8 @@ dev_dependencies:
   log4d: ^1.0.3 #
   connectivity: ^0.4.2
 
+  shared_preferences: ^0.4.2
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

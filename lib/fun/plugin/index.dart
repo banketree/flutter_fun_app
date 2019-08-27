@@ -9,6 +9,7 @@ import 'img/index.dart';
 import 'list/index.dart';
 import 'permission/index.dart';
 import 'rxdart/index.dart';
+import 'sharedpreference/index.dart';
 
 class PluginDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -59,6 +60,11 @@ class PluginDemoPage extends StatelessWidget {
           name: "RxDartDemo",
           callback: (it) {
             jumpTo(context,RxDartDemo());
+          }))
+      ..add(FunItem(
+          name: "SharedPreferenceDemo",
+          callback: (it) {
+            jumpTo(context,SharedPreferenceDemo());
           }));
   }
 
