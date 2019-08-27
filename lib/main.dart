@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'bean/fun_item.dart';
 import 'fun/layout/index.dart';
 import 'fun/state/index.dart';
+import 'fun/plugin/index.dart';
 import 'dart:io';
 
 
@@ -55,6 +56,11 @@ class HomePage extends StatelessWidget {
           name: "4种状态管理",
           callback: (it) {
             jumpTo(context,StateDemoPage());
+          }))
+      ..add(FunItem(
+          name: "插件管理",
+          callback: (it) {
+            jumpTo(context,PluginDemoPage());
           }));
   }
 

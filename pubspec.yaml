@@ -44,6 +44,7 @@ dev_dependencies:
   flutter_redux: ^0.5.3
   provide: ^1.0.2
   sentry: ^2.2.0
+  disk_lru_cache: ^0.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
