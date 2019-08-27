@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_fun/bean/fun_item.dart';
 import 'blocs/index.dart';
 import 'scoped/index.dart';
+import 'provider/index.dart';
 
 class StateDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -18,16 +19,16 @@ class StateDemoPage extends StatelessWidget {
           callback: (it) {
             jumpTo(context,ScopedDemo());
           }))
-//      ..add(FunItem(
-//          name: "Themes",
-//          callback: (it) {
-//            jumpTo(context,ThemesPage());
-//          }))
-//      ..add(FunItem(
-//          name: "extend",
-//          callback: (it) {
-//            jumpTo(context,ExtendPage());
-//          }))
+      ..add(FunItem(
+          name: "provider",
+          callback: (it) {
+            jumpTo(context,ProviderDemo());
+          }))
+      ..add(FunItem(
+          name: "redux",
+          callback: (it) {
+            jumpTo(context,null);
+          }))
     ;
   }
 
