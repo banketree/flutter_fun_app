@@ -5,6 +5,7 @@ import 'crypto/index.dart';
 import 'database/index.dart';
 import 'file/index.dart';
 import 'https/index.dart';
+import 'img/index.dart';
 
 class PluginDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -35,6 +36,11 @@ class PluginDemoPage extends StatelessWidget {
           name: "HttpsDemo",
           callback: (it) {
             jumpTo(context,HttpsDemo());
+          }))
+      ..add(FunItem(
+          name: "SelectImage",
+          callback: (it) {
+            jumpTo(context,SelectImage());
           }));
   }
 
