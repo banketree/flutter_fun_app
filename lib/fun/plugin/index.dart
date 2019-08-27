@@ -8,6 +8,7 @@ import 'https/index.dart';
 import 'img/index.dart';
 import 'list/index.dart';
 import 'permission/index.dart';
+import 'rxdart/index.dart';
 
 class PluginDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -53,6 +54,11 @@ class PluginDemoPage extends StatelessWidget {
           name: "PermissionPage",
           callback: (it) {
             jumpTo(context,PermissionPage());
+          }))
+      ..add(FunItem(
+          name: "RxDartDemo",
+          callback: (it) {
+            jumpTo(context,RxDartDemo());
           }));
   }
 
