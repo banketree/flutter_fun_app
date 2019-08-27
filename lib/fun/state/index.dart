@@ -1,38 +1,33 @@
 import 'package:flutter/material.dart';
-import 'bean/fun_item.dart';
-import 'fun/layout/index.dart';
-import 'fun/state/index.dart';
+import 'package:flutter_app_fun/bean/fun_item.dart';
+import 'blocs/index.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "优速flutter",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
+class StateDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
 
   initData(BuildContext context) {
     funLists
       ..add(FunItem(
-          name: "布局以及控件",
+          name: "Blocs",
           callback: (it) {
-            jumpTo(context,LayoutDemoPage());
+            jumpTo(context,BlocsDemo());
           }))
-      ..add(FunItem(
-          name: "4种状态管理",
-          callback: (it) {
-            jumpTo(context,StateDemoPage());
-          }));
+//      ..add(FunItem(
+//          name: "Elements",
+//          callback: (it) {
+//            jumpTo(context,ElementsDemoPage());
+//          }))
+//      ..add(FunItem(
+//          name: "Themes",
+//          callback: (it) {
+//            jumpTo(context,ThemesPage());
+//          }))
+//      ..add(FunItem(
+//          name: "extend",
+//          callback: (it) {
+//            jumpTo(context,ExtendPage());
+//          }))
+    ;
   }
 
   jumpTo(BuildContext context,Widget target) {
@@ -48,7 +43,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("优速flutter"),
+        title: Text("Bar Demo"),
       ),
       body: Container(
         child: ListView.builder(
@@ -76,15 +71,6 @@ class HomePage extends StatelessWidget {
             },
           )
         ],
-      ),
-    );
-  }
-
-  _showSnackBar(BuildContext context, FunItem item) {
-    Scaffold.of(context).showSnackBar(
-      SnackBar(
-        content: Text("${item.name} hahaha"),
-        backgroundColor: Colors.amber,
       ),
     );
   }
