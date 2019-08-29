@@ -3,22 +3,16 @@ import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'redux_state.dart';
 
-main() {
-  final store = Store<ReduxState>(
-      getReduce,
-      initialState: ReduxState.initState()
-  );
-  runApp(SPPDemo3(store,));
-}
 
-
-class SPPDemo3 extends StatelessWidget {
-
-  final Store<ReduxState> store;
-  SPPDemo3(this.store);
+class ReDuxDemo3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = Store<ReduxState>(
+        getReduce,
+        initialState: ReduxState.initState()
+    );
+
     return StoreProvider(
         store: store,
         child: StoreBuilder<ReduxState>(builder: (BuildContext context, Store<ReduxState> store){

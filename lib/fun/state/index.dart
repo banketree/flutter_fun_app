@@ -3,6 +3,7 @@ import 'package:flutter_app_fun/bean/fun_item.dart';
 import 'blocs/index.dart';
 import 'scoped/index.dart';
 import 'provider/index.dart';
+import 'redux/index.dart';
 
 class StateDemoPage extends StatelessWidget {
   final List<FunItem> funLists = [];
@@ -27,7 +28,7 @@ class StateDemoPage extends StatelessWidget {
       ..add(FunItem(
           name: "redux",
           callback: (it) {
-            jumpTo(context,null);
+            jumpTo(context,ReDuxDemo3());
           }))
     ;
   }
