@@ -3,6 +3,7 @@ import 'bean/fun_item.dart';
 import 'fun/layout/index.dart';
 import 'fun/state/index.dart';
 import 'fun/plugin/index.dart';
+import 'fun/problem/index.dart';
 import 'dart:io';
 
 
@@ -61,6 +62,11 @@ class HomePage extends StatelessWidget {
           name: "插件管理",
           callback: (it) {
             jumpTo(context,PluginDemoPage());
+          }))
+      ..add(FunItem(
+          name: "问题集合",
+          callback: (it) {
+            jumpTo(context,ProblemDemoPage());
           }));
   }
 

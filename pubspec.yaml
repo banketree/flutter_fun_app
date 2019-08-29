@@ -59,6 +59,7 @@ dev_dependencies:
   connectivity: ^0.4.2
 
   shared_preferences: ^0.4.2
+  flutter_boost: ^0.0.400
 
 
 # For information on the generic Dart part of this file, see the
