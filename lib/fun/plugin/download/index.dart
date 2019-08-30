@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
-import 'package:flutter_downloader/flutter_downloader.dart';
+//import 'package:flutter_downloader/flutter_downloader.dart';
 
 
 class DownloadManager extends StatelessWidget {
@@ -69,13 +69,13 @@ class DownloadManager extends StatelessWidget {
 
   // 根据 downloadUrl 和 savePath 下载文件
   _downloadFile(downloadUrl, savePath) async {
-    await FlutterDownloader.enqueue(
-      url: downloadUrl,
-      savedDir: savePath,
-      showNotification: true,
-      // show download progress in status bar (for Android)
-      openFileFromNotification:
-      true, // click on notification to open downloaded file (for Android)
-    );
+//    await FlutterDownloader.enqueue(
+//      url: downloadUrl,
+//      savedDir: savePath,
+//      showNotification: true,
+//      // show download progress in status bar (for Android)
+//      openFileFromNotification:
+//      true, // click on notification to open downloaded file (for Android)
+//    );
   }
 }
