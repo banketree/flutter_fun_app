@@ -1,36 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_case/theme_data_case.dart';
 
 void main() {
   runApp(MyApp());
 }
-
-//MaterialApp({
-//Key key,
-//this.title = '', // 设备用于为用户识别应用程序的单行描述
-//this.home, // 应用程序默认路由的小部件,用来定义当前应用打开的时候，所显示的界面
-//this.color, // 在操作系统界面中应用程序使用的主色。
-//this.theme, // 应用程序小部件使用的颜色。
-//this.routes = const <String, WidgetBuilder>{}, // 应用程序的顶级路由表
-//this.navigatorKey, // 在构建导航器时使用的键。
-//this.initialRoute, // 如果构建了导航器，则显示的第一个路由的名称
-//this.onGenerateRoute, // 应用程序导航到指定路由时使用的路由生成器回调
-//this.onUnknownRoute, // 当 onGenerateRoute 无法生成路由(initialRoute除外)时调用
-//this.navigatorObservers = const <NavigatorObserver>[], // 为该应用程序创建的导航器的观察者列表
-//this.builder, // 用于在导航器上面插入小部件，但在由WidgetsApp小部件创建的其他小部件下面插入小部件，或用于完全替换导航器
-//this.onGenerateTitle, // 如果非空，则调用此回调函数来生成应用程序的标题字符串，否则使用标题。
-//this.locale, // 此应用程序本地化小部件的初始区域设置基于此值。
-//this.localizationsDelegates, // 这个应用程序本地化小部件的委托。
-//this.localeListResolutionCallback, // 这个回调负责在应用程序启动时以及用户更改设备的区域设置时选择应用程序的区域设置。
-//this.localeResolutionCallback, //
-//this.supportedLocales = const <Locale>[Locale('en', 'US')], // 此应用程序已本地化的地区列表
-//this.debugShowMaterialGrid = false, // 打开绘制基线网格材质应用程序的网格纸覆盖
-//this.showPerformanceOverlay = false, // 打开性能叠加
-//this.checkerboardRasterCacheImages = false, // 打开栅格缓存图像的棋盘格
-//this.checkerboardOffscreenLayers = false, // 打开渲染到屏幕外位图的图层的棋盘格
-//this.showSemanticsDebugger = false, // 打开显示框架报告的可访问性信息的覆盖
-//this.debugShowCheckedModeBanner = true, // 在选中模式下打开一个小的“DEBUG”横幅，表示应用程序处于选中模式
-//})
 
 void showAlertDialog(BuildContext context, String title, String content) {
   showDialog(
@@ -59,19 +33,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // 设备用于为用户识别应用程序的单行描述
       title: 'Flutter case',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      // 应用程序小部件使用的颜色。
+      theme: getLocalThemeData2(),
+      // 应用程序默认路由的小部件,用来定义当前应用打开的时候，所显示的界面
       home: MyHomePage(title: 'Flutter Case'),
+      // 在操作系统界面中应用程序使用的主色。
       color: Color(0xFF00ffff),
+      // 应用程序的顶级路由表
       routes: <String, WidgetBuilder>{
         // 这里可以定义静态路由，不能传递参数
         '/second': (_) => MyHomePage(title: 'Flutter Case3'),
         '/home': (_) => MyHomePage(title: 'Flutter Case2'),
       },
+      // 在构建导航器时使用的键。
+      //navigatorKey:"",
+      // 如果构建了导航器，则显示的第一个路由的名称
       initialRoute: '/home',
+      // 应用程序导航到指定路由时使用的路由生成器回调
       onGenerateRoute: (settings) {
         WidgetBuilder builder;
         switch (settings.name) {
@@ -84,6 +64,7 @@ class MyApp extends StatelessWidget {
         }
         return MaterialPageRoute(builder: builder, settings: settings);
       },
+      // 当 onGenerateRoute 无法生成路由(initialRoute除外)时调用
       onUnknownRoute: (RouteSettings setting) {
         String name = setting.name;
         print("未匹配到路由:$name");
@@ -92,9 +73,11 @@ class MyApp extends StatelessWidget {
           return MyHomePage(title: 'Flutter error');
         });
       },
+      // 为该应用程序创建的导航器的观察者列表
       navigatorObservers: [
         MyObserver(),
       ],
+      // 用于在导航器上面插入小部件，但在由WidgetsApp小部件创建的其他小部件下面插入小部件，或用于完全替换导航器
       builder: (BuildContext context, Widget child) {
         //一般做字体大小，方向，主题颜色等配置
         return MediaQuery(
@@ -105,14 +88,18 @@ class MyApp extends StatelessWidget {
           child: child,
         );
       },
+      // 如果非空，则调用此回调函数来生成应用程序的标题字符串，否则使用标题。
       onGenerateTitle: (context) {
         //用于做本地化
         return 'Flutter demo case 6666';
       },
+      // 此应用程序本地化小部件的初始区域设置基于此值。
       locale: Locale('yy', 'zh'),
+      // 这个应用程序本地化小部件的委托。
       localizationsDelegates: [
         MyLocalizationsDelegates(),
       ],
+      // 这个回调负责在应用程序启动时以及用户更改设备的区域设置时选择应用程序的区域设置。
       localeResolutionCallback: (local, support) {
         if (support.contains(support)) {
           print('support');
@@ -121,16 +108,22 @@ class MyApp extends StatelessWidget {
         print('no_support');
         return const Locale('yy', 'zh');
       },
+      // 此应用程序已本地化的地区列表
       supportedLocales: [
         const Locale('yy'),
         const Locale('zh'),
       ],
-      debugShowMaterialGrid: false,//打开绘制基线网格材质应用程序的网格纸覆盖
-      showPerformanceOverlay: false,// 打开性能叠加
-      checkerboardRasterCacheImages: false,// 打开栅格缓存图像的棋盘格
-      checkerboardOffscreenLayers: false,// 打开渲染到屏幕外位图的图层的棋盘格
-      showSemanticsDebugger: false,// 打开显示框架报告的可访问性信息的覆盖
-      debugShowCheckedModeBanner: false,// 在选中模式下打开一个小的“DEBUG”横幅，表示应用程序处于选中模式
+      debugShowMaterialGrid: false,
+      //打开绘制基线网格材质应用程序的网格纸覆盖
+      showPerformanceOverlay: false,
+      // 打开性能叠加
+      checkerboardRasterCacheImages: false,
+      // 打开栅格缓存图像的棋盘格
+      checkerboardOffscreenLayers: false,
+      // 打开渲染到屏幕外位图的图层的棋盘格
+      showSemanticsDebugger: false,
+      // 打开显示框架报告的可访问性信息的覆盖
+      debugShowCheckedModeBanner: false, // 在选中模式下打开一个小的“DEBUG”横幅，表示应用程序处于选中模式
     );
   }
 }
