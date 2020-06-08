@@ -8,24 +8,26 @@ void main() {
 
 void showAlertDialog(BuildContext context, String title, String content) {
   showDialog(
-      context: context,
-      builder: (_) => new AlertDialog(
-              title: new Text(title),
-              content: new Text(content),
-              actions: <Widget>[
-                new FlatButton(
-                  child: new Text("CANCEL"),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-                new FlatButton(
-                  child: new Text("OK"),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                )
-              ]));
+    context: context,
+    builder: (_) => new AlertDialog(
+      title: new Text(title),
+      content: new Text(content),
+      actions: <Widget>[
+        new FlatButton(
+          child: new Text("CANCEL"),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        new FlatButton(
+          child: new Text("OK"),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -93,26 +95,29 @@ class MyApp extends StatelessWidget {
         //用于做本地化
         return 'Flutter demo case 6666';
       },
-      // 此应用程序本地化小部件的初始区域设置基于此值。
-      locale: Locale('yy', 'zh'),
-      // 这个应用程序本地化小部件的委托。
-      localizationsDelegates: [
-        MyLocalizationsDelegates(),
-      ],
-      // 这个回调负责在应用程序启动时以及用户更改设备的区域设置时选择应用程序的区域设置。
-      localeResolutionCallback: (local, support) {
-        if (support.contains(support)) {
-          print('support');
-          return local;
-        }
-        print('no_support');
-        return const Locale('yy', 'zh');
-      },
-      // 此应用程序已本地化的地区列表
-      supportedLocales: [
-        const Locale('yy'),
-        const Locale('zh'),
-      ],
+//      // 此应用程序本地化小部件的初始区域设置基于此值。
+//      locale: Locale('yy', 'zh'),
+//      // 这个应用程序本地化小部件的委托。
+//      localizationsDelegates: [
+//        // 准备在这里添加我们自己创建的代理
+//        MyLocalizationsDelegates(),
+//        GlobalMaterialLocalizations.delegate,
+//        GlobalWidgetsLocalizations.delegate,
+//      ],
+//      // 这个回调负责在应用程序启动时以及用户更改设备的区域设置时选择应用程序的区域设置。
+//      localeResolutionCallback: (local, support) {
+//        if (support.contains(support)) {
+//          print('support');
+//          return local;
+//        }
+//        print('no_support');
+//        return const Locale('yy', 'zh');
+//      },
+//      // 此应用程序已本地化的地区列表
+//      supportedLocales: [
+//        const Locale('yy'),
+//        const Locale('zh'),
+//      ],
       debugShowMaterialGrid: false,
       //打开绘制基线网格材质应用程序的网格纸覆盖
       showPerformanceOverlay: false,
